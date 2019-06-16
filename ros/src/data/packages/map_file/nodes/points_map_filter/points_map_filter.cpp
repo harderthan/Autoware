@@ -125,8 +125,8 @@ void points_map_filter::current_pose_callback_(
       pass_.filter(*cloud_filtered);
       sensor_msgs::PointCloud2 msg;
       pcl::toROSMsg(*cloud_filtered, msg);
-      map_pub_.publish(msg);
       ROS_INFO_STREAM("update map");
+      map_pub_.publish(msg);
     }
   }
   return;
